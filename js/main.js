@@ -29,6 +29,7 @@ var app = {
         });
     }
 	$(window).on('hashchange', $.proxy(this.route, this));
+	
    },
     initialize: function() {
         // var self = this;
@@ -39,7 +40,7 @@ var app = {
 		 var self = this;
 		 this.detailsURL = /^#employees\/(\d{1,})/;
 		 this.registerEvents();
-		 this.store = new WebSqlStore(function() {
+		 this.store = new MemoryStore(function() {
 		 	self.route();
 		 });
     },
